@@ -22,15 +22,15 @@ const count32 = document.getElementById("count32");
 const count33 = document.getElementById("count33");
 
 //select id from something, I dont remember
-const turn = document.getElementById("turn");
-const restart = document.getElementById("restart");
+const turn = document.getElementById("turn-display");
+const restart = document.getElementById("restart-btn");
 const select = document.getElementById("select");
 const win = document.getElementById("win");
 const bgm = document.getElementById("bgm");
 const draw = document.getElementById("draw");
 
-let x = 1; //use to define whose turn is it rn. X or O
-let y = 0; //counter to draw
+let x = 1; //use to define whose turn is it rn. X or O using % operator
+let y = 0; //counter to draw. If y == 9 then it's draw
 let choice = ["O", "X"];
 
 //click to put O or X on the blocks
@@ -192,246 +192,54 @@ function upCount33() {
 function checkWin() {
     //check O winner
     if (count11.innerText == choice[0] & count12.innerText == choice[0] & count13.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count21.innerText == choice[0] & count22.innerText == choice[0] & count23.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count31.innerText == choice[0] & count32.innerText == choice[0] & count33.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count11.innerText == choice[0] & count21.innerText == choice[0] & count31.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count12.innerText == choice[0] & count22.innerText == choice[0] & count32.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count13.innerText == choice[0] & count23.innerText == choice[0] & count33.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count13.innerText == choice[0] & count22.innerText == choice[0] & count31.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
     else if (count11.innerText == choice[0] & count22.innerText == choice[0] & count33.innerText == choice[0]) {
-        turn.innerText = "Player 'O' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerOwin();
     }
 
     //check X winner
     else if (count11.innerText == choice[1] & count12.innerText == choice[1] & count13.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count21.innerText == choice[1] & count22.innerText == choice[1] & count23.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count31.innerText == choice[1] & count32.innerText == choice[1] & count33.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count11.innerText == choice[1] & count21.innerText == choice[1] & count31.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count12.innerText == choice[1] & count22.innerText == choice[1] & count32.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count13.innerText == choice[1] & count23.innerText == choice[1] & count33.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count13.innerText == choice[1] & count22.innerText == choice[1] & count31.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (count11.innerText == choice[1] & count22.innerText == choice[1] & count33.innerText == choice[1]) {
-        turn.innerText = "Player 'X' win!!"
-        restart.style.visibility = "visible";
-        block11.style.pointerEvents = "none";
-        block12.style.pointerEvents = "none";
-        block13.style.pointerEvents = "none";
-        block21.style.pointerEvents = "none";
-        block22.style.pointerEvents = "none";
-        block23.style.pointerEvents = "none";
-        block31.style.pointerEvents = "none";
-        block32.style.pointerEvents = "none";
-        block33.style.pointerEvents = "none";
-        win.play();
-        bgm.pause();
+        playerXwin()
     }
     else if (y == 9) {
         turn.innerText = ".......Draw......."
@@ -448,6 +256,38 @@ function checkWin() {
         bgm.pause();
         draw.play();
     }
+}
+
+function playerOwin(){
+    turn.innerText = "Player 'O' win!!"
+    restart.style.visibility = "visible";
+    block11.style.pointerEvents = "none";
+    block12.style.pointerEvents = "none";
+    block13.style.pointerEvents = "none";
+    block21.style.pointerEvents = "none";
+    block22.style.pointerEvents = "none";
+    block23.style.pointerEvents = "none";
+    block31.style.pointerEvents = "none";
+    block32.style.pointerEvents = "none";
+    block33.style.pointerEvents = "none";
+    win.play();
+    bgm.pause();
+}
+
+function playerXwin(){
+    turn.innerText = "Player 'X' win!!"
+    restart.style.visibility = "visible";
+    block11.style.pointerEvents = "none";
+    block12.style.pointerEvents = "none";
+    block13.style.pointerEvents = "none";
+    block21.style.pointerEvents = "none";
+    block22.style.pointerEvents = "none";
+    block23.style.pointerEvents = "none";
+    block31.style.pointerEvents = "none";
+    block32.style.pointerEvents = "none";
+    block33.style.pointerEvents = "none";
+    win.play();
+    bgm.pause();
 }
 
 function autoBgm() {
